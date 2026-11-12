@@ -1,0 +1,23 @@
+$dark: #0d1b2a;
+$dark-2: #13263b;
+$sun: #ffb703;
+$sun-dark: #f59e0b;
+$green: #22c55e;
+$text: #1b2733;
+$muted: #64748b;
+$light: #f4f7fa;
+$line: #e2e8f0;
+
+$font-head: 'Montserrat', sans-serif;
+$font-body: 'Inter', system-ui, sans-serif;
+
+$bp-tablet: 960px;
+$bp-mobile: 600px;
+
+@mixin tablet {
+  @media (max-width: $bp-tablet) { @content; }
+}
+
+@mixin mobile {
+  @media (max-width: $bp-mobile) { @content; }
+}

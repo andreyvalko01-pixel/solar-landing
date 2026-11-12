@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СонцеДім — сонячні електростанції під ключ</title>
+  <meta name="description" content="Проєктуємо та встановлюємо сонячні станції для приватних будинків. Розрахуйте окупність онлайн за хвилину.">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/scss/main.scss">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <a href="#" class="logo"><span class="logo__sun"></span>СонцеДім</a>
+      <nav class="header__nav">
+        <a href="#benefits">Переваги</a>
+        <a href="#calc">Калькулятор</a>
+        <a href="#steps">Етапи</a>
+        <a href="#projects">Об'єкти</a>
+      </nav>
+      <a href="tel:+380503332211" class="header__phone">050 333 22 11</a>
+      <a href="#lead" class="btn btn--sm">Консультація</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <picture>
+      <source srcset="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?w=1800&q=75&fm=webp&fit=crop" type="image/webp">
+      <img class="hero__bg" src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?w=1800&q=75&fit=crop" alt="" fetchpriority="high">
+    </picture>
+    <div class="container hero__content">
+      <p class="hero__tag" data-anim="hero">Київ та область · гарантія на монтаж 5 років</p>
+      <h1 data-anim="hero">Власна сонячна станція — світло без графіків і рахунків</h1>
+      <p class="hero__lead" data-anim="hero">Підберемо обладнання, змонтуємо за 3–5 днів і налаштуємо моніторинг у телефоні.</p>
+      <div class="hero__actions" data-anim="hero">
+        <a href="#calc" class="btn">Розрахувати окупність</a>
+        <a href="#lead" class="btn btn--ghost">Безкоштовний виїзд</a>
+      </div>
+      <ul class="hero__stats" data-anim="hero">
+        <li><strong data-counter="340">0</strong><span>станцій встановлено</span></li>
+        <li><strong data-counter="4.2" data-decimals="1">0</strong><span>МВт загальна потужність</span></li>
+        <li><strong data-counter="25">0</strong><span>років служать панелі</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section benefits" id="benefits">
+    <div class="container">
+      <h2 class="section__title" data-anim="up">Чому ставлять станцію саме зараз</h2>
+      <div class="benefits__grid">
+        <article class="benefit" data-anim="card">
+          <span class="benefit__icon">⚡</span>
+          <h3>Світло під час відключень</h3>
+          <p>Гібридна станція з акумулятором автоматично перемикає будинок на резерв.</p>
+        </article>
+        <article class="benefit" data-anim="card">
+          <span class="benefit__icon">₴</span>
+          <h3>Менші рахунки</h3>
+          <p>Вдень дім живиться від сонця, а надлишок можна продавати в мережу.</p>
+        </article>
+        <article class="benefit" data-anim="card">
+          <span class="benefit__icon">🛠</span>
+          <h3>Монтаж під ключ</h3>
+          <p>Проєкт, дозволи, монтаж і підключення — без вашої участі в паперах.</p>
+        </article>
+        <article class="benefit" data-anim="card">
+          <span class="benefit__icon">📱</span>
+          <h3>Контроль у телефоні</h3>
+          <p>Бачите генерацію, заряд батареї і споживання в реальному часі.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section calc" id="calc">
+    <div class="container calc__grid">
+      <div data-anim="up">
+        <h2 class="section__title">Калькулятор окупності</h2>
+        <p class="section__lead">Розрахунок орієнтовний. Точну вартість назве інженер після виїзду.</p>
+
+        <form class="calc__form" id="calc-form">
+          <label class="range-field">
+            <span>Споживання на місяць <output id="out-consumption">400</output> кВт·год</span>
+            <input type="range" name="consumption" min="100" max="2000" step="50" value="400">
+          </label>
+
+          <label class="range-field">
+            <span>Тариф <output id="out-tariff">4,32</output> грн/кВт·год</span>
+            <input type="range" name="tariff" min="2" max="10" step="0.01" value="4.32">
+          </label>
+
+          <div class="segmented">
+            <span>Тип станції</span>
+            <label><input type="radio" name="type" value="grid" checked><b>Мережева</b><small>Економія на рахунках</small></label>
+            <label><input type="radio" name="type" value="hybrid"><b>Гібридна</b><small>+ резерв при відключеннях</small></label>
+          </div>
+
+          <label class="select-field">
+            <span>Регіон</span>
+            <select name="region">
+              <option value="north">Північ (Чернігів, Житомир)</option>
+              <option value="center" selected>Центр (Київ, Вінниця)</option>
+              <option value="west">Захід (Львів, Рівне)</option>
+              <option value="south">Південь (Одеса, Миколаїв)</option>
+            </select>
+          </label>
+        </form>
+      </div>
+
+      <div class="calc__result" data-anim="up">
+        <div class="result-row result-row--main">
+          <span>Рекомендована потужність</span>
+          <strong id="res-power">—</strong>
+        </div>
+        <div class="result-row">
+          <span>Вартість під ключ</span>
+          <strong id="res-cost">—</strong>
+        </div>
+        <div class="result-row">
+          <span>Генерація за рік</span>
+          <strong id="res-yield">—</strong>
+        </div>
+        <div class="result-row">
+          <span>Економія на рік</span>
+          <strong id="res-saving">—</strong>
+        </div>
+        <div class="payback">
+          <span>Окупність</span>
+          <strong id="res-payback">—</strong>
+          <div class="payback__bar"><i id="res-bar"></i></div>
+          <small>з 25 років гарантованої роботи панелей</small>
+        </div>
+        <a href="#lead" class="btn btn--block" id="calc-to-lead">Отримати точний розрахунок</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section steps" id="steps">
+    <div class="container">
+      <h2 class="section__title" data-anim="up">Як ми працюємо</h2>
+      <ol class="steps__list">
+        <li data-anim="card"><b>1</b><h3>Заявка</h3><p>Уточнюємо споживання і бажаний результат.</p></li>
+        <li data-anim="card"><b>2</b><h3>Виїзд інженера</h3><p>Обмірюємо дах, перевіряємо електрощит.</p></li>
+        <li data-anim="card"><b>3</b><h3>Проєкт і договір</h3><p>Фіксуємо ціну та строки. Без доплат.</p></li>
+        <li data-anim="card"><b>4</b><h3>Монтаж</h3><p>3–5 днів, прибираємо за собою.</p></li>
+        <li data-anim="card"><b>5</b><h3>Запуск</h3><p>Налаштовуємо застосунок і навчаємо.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <div class="container">
+      <h2 class="section__title" data-anim="up">Наші об'єкти</h2>
+      <div class="projects__grid">
+        <figure data-anim="card">
+          <img src="https://images.unsplash.com/photo-1655300256335-beef51a914fe?w=800&q=70&fit=crop&fm=webp" alt="Будинок із сонячними панелями" loading="lazy" width="800" height="560">
+          <figcaption><b>Ірпінь, 10 кВт</b><span>гібрид + 10 кВт·год АКБ</span></figcaption>
+        </figure>
+        <figure data-anim="card">
+          <img src="https://images.unsplash.com/photo-1694327671725-e2a81cda3436?w=800&q=70&fit=crop&fm=webp" alt="Ряди сонячних панелей на даху" loading="lazy" width="800" height="560">
+          <figcaption><b>Бровари, 30 кВт</b><span>мережева, комерційний дах</span></figcaption>
+        </figure>
+        <figure data-anim="card">
+          <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=800&q=70&fit=crop&fm=webp" alt="Сонячні панелі крупним планом" loading="lazy" width="800" height="560">
+          <figcaption><b>Обухів, 6 кВт</b><span>мережева, приватний будинок</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section lead" id="lead">
+    <div class="container lead__box" data-anim="up">
+      <div>
+        <h2>Безкоштовний виїзд інженера</h2>
+        <p>Залиште номер — передзвонимо протягом 30 хвилин у робочий час і узгодимо зручний день.</p>
+        <p class="lead__calc" id="lead-calc" hidden></p>
+      </div>
+      <form class="lead__form" id="lead-form" novalidate>
+        <input type="text" name="name" placeholder="Ваше ім'я" autocomplete="name">
+        <input type="tel" name="phone" placeholder="+380 __ ___ __ __" autocomplete="tel">
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--block" type="submit">Чекаю дзвінка</button>
+        <p class="lead__status" id="lead-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <span>© <span id="year"></span> СонцеДім</span>
+      <span>Київ, вул. Сонячна, 7 · пн–сб 9:00–19:00</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
